@@ -1,0 +1,57 @@
+{
+	"name": "Employee_filter",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Employees",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "dataflowout",
+						"type": "DatasetReference"
+					},
+					"name": "employeeout"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Ename"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          EmployeeID as short,",
+				"          FirstName as string,",
+				"          LastName as string,",
+				"          Department as string,",
+				"          Salary as double",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     inferDriftedColumnTypes: true,",
+				"     limit: 100,",
+				"     ignoreNoFilesFound: false) ~> source1",
+				"source1 derive(Ename = concat(FirstName,'', LastName)) ~> Ename",
+				"Ename sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          OrderID as string,",
+				"          { CustomerName} as string,",
+				"          { ProductID} as string,",
+				"          { Quantity} as string,",
+				"          { TotalPrice} as string",
+				"     ),",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> employeeout"
+			]
+		}
+	}
+}

@@ -1,0 +1,34 @@
+{
+	"name": "Dataflow",
+	"properties": {
+		"activities": [
+			{
+				"name": "Employee_filter",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Employee_filter",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-04-23T20:00:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,0 +1,25 @@
+{
+	"name": "Trigger_5f0",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "CopyPipeline_5f0",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Hour",
+				"interval": 24,
+				"startTime": "2024-04-19T20:28:00Z",
+				"endTime": "2024-04-20T20:28:00Z",
+				"timeZone": "UTC"
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+{
+	"name": "adf-data-migration20240419",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a3abda95-3662-4b15-99f8-89715c27dcf5",
+		"tenantId": "ec10f2a8-2b2b-4690-b80f-b355148016f5"
+	}
+}

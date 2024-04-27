@@ -1,0 +1,25 @@
+{
+	"name": "trigger-file-arrival",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "Copy_pipeline_dt_format",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw/blobs/cust",
+			"blobPathEndsWith": ".csv",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/8a5ba7c7-cbf9-47b8-a1d6-f5033e273707/resourceGroups/data-migration-project/providers/Microsoft.Storage/storageAccounts/datamigration20240419",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
