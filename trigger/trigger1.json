@@ -1,0 +1,24 @@
+{
+	"name": "trigger1",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "event_driven",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/raw/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/8a5ba7c7-cbf9-47b8-a1d6-f5033e273707/resourceGroups/data-migration-project/providers/Microsoft.Storage/storageAccounts/datamigration20240419",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
